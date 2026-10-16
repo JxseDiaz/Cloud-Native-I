@@ -1,14 +1,20 @@
 {
+  "users": [
+    { "name": "admin", "password": "admin123", "tags": "administrator" }
+  ],
+  "vhosts": [
+    { "name": "/" }
+  ],
+  "permissions": [
+    { "user": "admin", "vhost": "/", "configure": ".*", "write": ".*", "read": ".*" }
+  ],
   "policies": [
     {
       "vhost": "/",
       "name": "ha-all",
       "pattern": ".*",
       "apply-to": "queues",
-      "definition": {
-        "ha-mode": "all",
-        "ha-sync-mode": "automatic"
-      },
+      "definition": { "ha-mode": "all", "ha-sync-mode": "automatic" },
       "priority": 0
     }
   ]
